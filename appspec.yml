@@ -1,0 +1,14 @@
+version: 0.0 # version은 필수값, 0.0 고정
+os: linux # ec2에 배포하는 경우 필수 값이며, ec2인스턴스에서 사용하는 os 타입을 기입합니다
+
+files:
+  - source: /
+    destination: /home/ec2-user/deploy-temp
+
+hooks:
+  BeforeInstall:
+    - location: scripts/remove_before.sh # Application 생명주기(배포 사이클중에) remove_before.sh를 실행
+  AfterInstall:
+    - location: scripts/kill_process.sh # Application 생명주기(배포 사이클중에) kill_process.sh를 실행
+  ApplicationStart:
+    - location: scripts/run_process.sh # Application 생명주기(배포 사이클중에) run_process.sh를 실행

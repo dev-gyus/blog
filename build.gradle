@@ -22,9 +22,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    compileOnly group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
-    compileOnly group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
-    compileOnly group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 

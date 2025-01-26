@@ -25,6 +25,7 @@ public class RedissonConfig {
         } catch (UnknownHostException e) {
             result = "";
         }
+        // redis url 수정
         if (result.equals("10.0.130.253")) redisUri = "redis://127.0.0.1:6379";
         log.info("hostName:{}, redisUri: {}", result, redisUri);
         Config config = new Config();
